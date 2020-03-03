@@ -1,0 +1,14 @@
+{
+	"name" : "man",
+	"version": 1,
+	"env": {
+	"TOKEN": "@token"
+	},
+	"public": true,
+	"scale": {
+	  "sfo": {
+		"min": 1,
+		"max": 1
+		}
+	}
+}
