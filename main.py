@@ -8,7 +8,8 @@ from tensorlayer.models.seq2seq import Seq2seq
 from tensorlayer.models.seq2seq_with_attention import Seq2seqLuongAttention
 import os
 import keep_alive
-import dotenv
+from dotenv import load_dotenv
+load_dotenv()
 def initial_setup(data_corpus):
     metadata, idx_q, idx_a = data.load_data(PATH='data/{}/'.format(data_corpus))
     (trainX, trainY), (testX, testY), (validX, validY) = data.split_dataset(idx_q, idx_a)
@@ -106,5 +107,5 @@ class MyClient(discord.Client):
 #client.run(process.env.TOKEN)
 client = MyClient()
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv("TOKEN"))
 keep_alive.keep_alive()
