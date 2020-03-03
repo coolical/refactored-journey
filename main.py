@@ -3,8 +3,6 @@ import tensorflow as tf
 import tensorlayer as tl
 import numpy as np
 from tensorlayer.cost import cross_entropy_seq, cross_entropy_seq_with_mask
-from tqdm import tqdm
-from sklearn.utils import shuffle
 from data.twitter import data
 from tensorlayer.models.seq2seq import Seq2seq
 from tensorlayer.models.seq2seq_with_attention import Seq2seqLuongAttention
@@ -78,6 +76,7 @@ model_ = Seq2seq(
         n_units=256,
         embedding_layer=tl.layers.Embedding(vocabulary_size=vocabulary_size, embedding_size=emb_dim),
         )
+
 load_weights = tl.files.load_npz(name='model.npz')
 tl.files.assign_weights(load_weights, model_)
 class MyClient(discord.Client):
@@ -107,4 +106,4 @@ class MyClient(discord.Client):
 #client.run(process.env.TOKEN)
 client = MyClient()
 
-client.run(os.environ['TOKEN'])
+client.run('NjgzODIzNDg0NTM5MTA5Mzk2.Xl3PaQ.fgq5ZJUA0gRf4xKC-oQbnmI2Zyw')
